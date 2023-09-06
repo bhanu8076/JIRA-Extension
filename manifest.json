@@ -1,0 +1,20 @@
+{
+  "name": "JIRA extension",
+  "description": "Build a JIRA Task Extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["https://jenkins.searchunify.com/*/build"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["https://jira.grazitti.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

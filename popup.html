@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extension</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="mytabs">
+      <input type="radio" id="list" name="mytabs" checked="checked" />
+      <label for="list">List</label>
+      <div class="tab list-tab">
+        <table class="import-upload-export-div">
+          <tr>
+            <td class="export-td">
+              <button id="export-button">
+                Export &nbsp;<i class="fa fa-download"></i>
+              </button>
+            </td>
+            <!-- <td class="upload-button-td">
+              <button id="upload">Import &nbsp;<i class="fa fa-upload"></i></button>
+            </td> -->
+          </tr>
+        </table>
+        <hr />
+        <!-- This is list -->
+        <div class="email-lists">
+          <table class="email-list">
+            <thead>
+              <tr>
+                <th class="email-col-1"><h3>Email</h3></th>
+                <th class="col-ssh" style="display: none">SSH-Key</th>
+                <th class="email-col-2"><h3>Action</h3></th>
+              </tr>
+            </thead>
+            <tbody class="email-list-row"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="separator">|</div>
+      <input type="radio" id="form-field" name="mytabs" />
+      <label for="form-field">Form</label>
+      <div class="tab form-tab">
+        <!-- This is form -->
+        <form name="extension-form" id="extension-form" autocomplete="off">
+          <div class="email-div">
+            <label for="email" class="form-label">Email :</label><br />
+            <input type="text" id="email" name="email" spellcheck="false" />
+          </div>
+          <!-- if there are any email errors  -->
+          <div class="error-email"></div>
+          <div class="error-blank-email"></div>
+          
+
+          <div class="ssh-div">
+            <label for="ssh-key" class="form-label">SSH-Key :</label>
+            <textarea
+              rows="15"
+              name="ssh-key"
+              id="ssh-key"
+              spellcheck="false"
+            ></textarea>
+          </div>
+           <!-- if there are any ssh errors  -->
+          <div class="error-blank-ssh"></div>
+          <div class="submit-button">
+            <input type="button" value="Submit" id="form-button" />
+          </div>
+        </form>
+      </div>
+
+      <div class="separator">|</div>
+      <input type="radio" id="import-field" name="mytabs" />
+      <label for="import-field">Import</label>
+      <div class="tab import-tab">
+        <!-- This is import tab -->
+        <form name="import-form" id="import-form" autocomplete="off">
+          <div class="json-div">
+            <textarea
+              rows="20"
+              name="json-data"
+              id="json-data"
+              placeholder="Paste here to import. Accepted formats : JSON"
+              spellcheck="false"
+            ></textarea>
+          </div>
+          <div class="error-json"></div>
+          <div class="error-key-json"></div>
+        </form>
+        <!-- <input type="button" value="Submit" id="import-button" /> -->
+        <table class="import-upload-export-div">
+          <tr>
+            <td class="upload-button-td">
+              <button id="upload">
+                Import &nbsp;<i class="fa fa-sign-in"></i>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="separator">|</div>
+      <input type="radio" id="task" name="mytabs" />
+      <label for="task">Task</label>
+      <div class="tab task-tab">
+        <!-- This is Task -->
+
+        <div class="task-lists">
+          <table class="task-list">
+            <thead>
+              <tr>
+                <th class="task-col-1"><h3>Task ID</h3></th>
+                <th class="task-col-2"><h3>Title</h3></th>
+              </tr>
+            </thead>
+            <tbody class="task-list-row"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
