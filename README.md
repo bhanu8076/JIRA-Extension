@@ -1,0 +1,1 @@
+ A chrome extension with an integration of JIRA API for fetching a list of projects status that are “In Progress” or “TODO”. Also, provides functionality to populate “email” and corresponding “SSH” inside Jenkins page form fields.
